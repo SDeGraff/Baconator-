@@ -1,3 +1,10 @@
+// Format date as MM/DD/YYYY
+module.exports = {
+  format_date: (date) => {
+      return date.toLocaleDateString();
+  },
+};
+
 module.exports = {
   get_emoji: () => {
     const randomNum = Math.random();
