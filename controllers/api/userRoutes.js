@@ -33,19 +33,21 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/newLogin', async (req, res) => {
+router.post('/newlogin', async (req, res) => {
   try {
     const userEmail = req.body.email;
-	const userPassword = req.body.password;
-
-	console.log(userEmail, userPassword);
+	const userPassword = bcrypt.hash(req.body.password, 10);
 
 	req.session.save(() => {
 	req.session.user_id = userEmail;
+	req.session.password = userPassword;
 	req.session.logged_in = true;
-
-	res.json({ user: userEmail, message: 'User Account Created!' });
     });
+
+	res.json({ user: userEmail, password: userPassword, message: 'User Account Created!' });
+
+console.log(res);
+
 
   } catch (err) {
     res.status(400).json(err);
