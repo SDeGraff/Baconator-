@@ -33,10 +33,12 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/newlogin', async (req, res) => {
+router.post('/newLogin', async (req, res) => {
   try {
     const userEmail = req.body.email;
 	const userPassword = req.body.password;
+
+	console.log(userEmail, userPassword);
 
 	req.session.save(() => {
 	req.session.user_id = userEmail;
