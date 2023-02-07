@@ -33,6 +33,24 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.post('/newlogin', async (req, res) => {
+  try {
+    const userEmail = req.body.email;
+	const userPassword = req.body.password;
+
+	req.session.save(() => {
+	req.session.user_id = userEmail;
+	req.session.logged_in = true;
+
+	res.json({ user: userEmail, message: 'User Account Created!' });
+    });
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
