@@ -49,33 +49,29 @@ router.post('/logout', (req, res) => {
 
 router.post('/signup', async (req, res) => {
   try {
-    const userName = req.body.name;
+    const userName = req.body.userName;
 	const userEmail = req.body.email;
 	const userPassword = bcrypt.hash(req.body.password, 10);
 
-/*
-  User.create({
-    email: userEmail,
-    password: (userPassword).toString()
-  })
-*/
+	const userData = await User.create({
+		name: userName,
+		email: userEmail,
+		password: (userPassword).toString(),
+		message: 'User Created'
+	})
 
-      res
-        .status(200)
-        .json({ message: 'Good to go' });
-      return;
+	res
+	.status(200)
+	.json(userData);
+
 /*
 	req.session.save(() => {
 	req.session.user_id = userEmail;
 	req.session.password = userPassword;
 	req.session.logged_in = true;
-
-	res.json({ user: userEmail, password: userPassword, message: 'User Account Created!' });
-
     });
 
 */
-
 
   } catch (err) {
 	console.log(err);
