@@ -1,17 +1,17 @@
-<h2>Login</h2>
-
-<form class="form login-form">
-  <div class="form-group">
-    <label for="email-login">email:</label>
-    <input class="form-input" type="text" id="email-login" />
+<section class="login">
+  <div class="section-header">
+    <h3>Login</h3>
   </div>
-  <div class="form-group">
-    <label for="password-login">password:</label>
-    <input class="form-input" type="password" id="password-login" />
+  <div class="section-body">
+    <form id="login">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password">
+      <button type="submit">Login</button>
+      <label for="signup"><a href="/signup">Sign up</a></label>
+    </form>
   </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">login</button>
-  </div>
-</form>
+</section>
 
 <script src="/js/login.js"></script>
