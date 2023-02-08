@@ -53,6 +53,8 @@ router.post('/signup', async (req, res) => {
 	const userEmail = req.body.email;
 	const userPassword = bcrypt.hash(req.body.password, 10);
 
+	
+
 	const userData = await User.create({
 		name: userName,
 		email: userEmail,
@@ -75,7 +77,10 @@ router.post('/signup', async (req, res) => {
 
   } catch (err) {
 	console.log(err);
-    res.status(400).json(err);
+
+ //   if(errors.path == 'email') {alert('The data is not valid')};
+
+	res.status(400).json(err);
   }
 });
 
