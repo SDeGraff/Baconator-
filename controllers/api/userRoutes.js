@@ -49,7 +49,8 @@ router.post('/logout', (req, res) => {
 
 router.post('/signup', async (req, res) => {
   try {
-    const userEmail = req.body.email;
+    const userName = req.body.name;
+	const userEmail = req.body.email;
 	const userPassword = bcrypt.hash(req.body.password, 10);
 
 /*
@@ -59,6 +60,11 @@ router.post('/signup', async (req, res) => {
   })
 */
 
+      res
+        .status(200)
+        .json({ message: 'Good to go' });
+      return;
+/*
 	req.session.save(() => {
 	req.session.user_id = userEmail;
 	req.session.password = userPassword;
@@ -68,7 +74,7 @@ router.post('/signup', async (req, res) => {
 
     });
 
-
+*/
 
 
   } catch (err) {
