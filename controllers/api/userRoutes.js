@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const bcrypt = require('bcrypt');
+
 
 router.post('/login', async (req, res) => {
   try {
@@ -33,23 +35,28 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/newlogin', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const userEmail = req.body.email;
 	const userPassword = bcrypt.hash(req.body.password, 10);
-
+/*
 	req.session.save(() => {
 	req.session.user_id = userEmail;
 	req.session.password = userPassword;
 	req.session.logged_in = true;
     });
 
+
+  User.create({
+    email: userEmail,
+    password: (userPassword).toString()
+  })
+*/
+console.log(userPassword);
 	res.json({ user: userEmail, password: userPassword, message: 'User Account Created!' });
 
-console.log(res);
-
-
   } catch (err) {
+	console.log(err);
     res.status(400).json(err);
   }
 });
