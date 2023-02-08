@@ -35,33 +35,6 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/signup', async (req, res) => {
-  try {
-    const userEmail = req.body.email;
-	const userPassword = bcrypt.hash(req.body.password, 10);
-/*
-	req.session.save(() => {
-	req.session.user_id = userEmail;
-	req.session.password = userPassword;
-	req.session.logged_in = true;
-    });
-
-
-  User.create({
-    email: userEmail,
-    password: (userPassword).toString()
-  })
-*/
-console.log(userPassword);
-	res.json({ user: userEmail, password: userPassword, message: 'User Account Created!' });
-
-  } catch (err) {
-	console.log(err);
-    res.status(400).json(err);
-  }
-});
-
-
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
@@ -71,5 +44,40 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+
+
+router.post('/signup', async (req, res) => {
+  try {
+    const userEmail = req.body.email;
+	const userPassword = bcrypt.hash(req.body.password, 10);
+
+/*
+  User.create({
+    email: userEmail,
+    password: (userPassword).toString()
+  })
+*/
+
+	req.session.save(() => {
+	req.session.user_id = userEmail;
+	req.session.password = userPassword;
+	req.session.logged_in = true;
+
+	res.json({ user: userEmail, password: userPassword, message: 'User Account Created!' });
+
+    });
+
+
+
+
+  } catch (err) {
+	console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+
+
 
 module.exports = router;
