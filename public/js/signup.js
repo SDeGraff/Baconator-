@@ -12,7 +12,8 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      alert('User has been created');
+      document.location.replace('/login');
     } else {
       alert('Failed to create User');
     }
