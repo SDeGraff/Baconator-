@@ -10,13 +10,14 @@
     --pink: #F25757;
     --white: #FFFFFF;
     --lightpink: #FF6666;
+    --purple: #6600cc;
 }
 
 html {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'PT Sans Narrow',Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -25,6 +26,12 @@ body {
 
 a {
     font-weight: bold;
+    text-decoration: none;
+    color: var(--white);
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 p {
@@ -104,6 +111,27 @@ section {
     padding: 15px;
 }
 
-.section-body {
+button {
+    background-color: var(--red);
+    border: none;
+    display: block;
+    margin: 10px auto;
+    width: 200px;
+    border-radius: 15px;
+}
+
+button:hover {
+    background-color: var(--darkpink);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+textarea {
+    font-size: 12px;
+    border: none;
+    resize: vertical;
+    width: 200px;
     margin: 10px 0;
+    padding: 5px;
 }
