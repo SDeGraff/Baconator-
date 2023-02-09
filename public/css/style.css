@@ -9,6 +9,7 @@
     --darkpink: #D93B3B;
     --pink: #F25757;
     --white: #FFFFFF;
+    --lightpink: #FF6666;
 }
 
 html {
@@ -19,7 +20,7 @@ html {
 }
 
 body {
-    background-color: var(--darkpink);
+    background-color: var(--lightpink);
 }
 
 a {
@@ -35,9 +36,6 @@ h1 {
     font-family: 'Chango', cursive;
     color: var(--white);
     font-size: 64px;
-    margin: 20px 50px;
-    padding: 10px 15px;
-    display: inline-block;
 }
 
 h3 {
@@ -75,6 +73,13 @@ nav a {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    margin: 20px 50px;
+    padding: 10px 15px;
+}
+
+#masthead img {
+    width: 78px;
+    margin-right: 10px;
 }
 
 main {
