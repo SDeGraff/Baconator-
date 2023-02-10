@@ -24,16 +24,21 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: {
-        isEmail: true,
-      },
+		validate: {
+			isEmail: {
+				msg: "Email does not seem to be an email",
+			},
+		},
+
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+/*
       validate: {
         len: [8],
       },
+*/
     },
   },
   {
