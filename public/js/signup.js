@@ -5,7 +5,7 @@ const loginFormHandler = async (event) => {
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
-  const response = await fetch('/api/users/signup', {
+  const response = await fetch('/api/signup', {
       method: 'POST',
       body: JSON.stringify({ userName, email, password }),
       headers: { 'Content-Type': 'application/json' },

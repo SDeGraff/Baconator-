@@ -10,16 +10,18 @@ router.post('/login', async (req, res) => {
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect email or password, please try again. No user data' });
       return;
     }
-
+console.log(req.body.password);
     const validPassword = await userData.checkPassword(req.body.password);
+
+console.log(validPassword);
 
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect email or password, please try again. Password incorrect.'});
       return;
     }
 
@@ -29,6 +31,8 @@ router.post('/login', async (req, res) => {
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });
+
+	res.redirect('/post');
 
   } catch (err) {
     res.status(400).json(err);
@@ -51,14 +55,11 @@ router.post('/signup', async (req, res) => {
   try {
     const userName = req.body.userName;
 	const userEmail = req.body.email;
-	const userPassword = bcrypt.hash(req.body.password, 10);
-
-	
 
 	const userData = await User.create({
 		name: userName,
 		email: userEmail,
-		password: (userPassword).toString(),
+		password: req.body.password,
 		message: 'User Created'
 	})
 
@@ -66,14 +67,7 @@ router.post('/signup', async (req, res) => {
 	.status(200)
 	.json(userData);
 
-/*
-	req.session.save(() => {
-	req.session.user_id = userEmail;
-	req.session.password = userPassword;
-	req.session.logged_in = true;
-    });
-
-*/
+	res.redirect('/login');
 
   } catch (err) {
 	console.log(err);
