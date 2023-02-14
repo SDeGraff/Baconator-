@@ -34,9 +34,7 @@ Deployed application: [Heroku URL](Heroku URL)
 
 ## Screenshot
 
-    ```md
     ![alt text](public/Images/baconator_screenshot.png)
-    ```
 
 ## License
 
