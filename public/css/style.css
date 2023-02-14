@@ -57,7 +57,7 @@ h3 {
 }
 
 h4 {
-    font-size: 24px;
+    font-size: 28px;
     font-family: "Caveat", cursive;
     font-weight: 700;
     color: var(--white);
@@ -148,6 +148,10 @@ textarea {
     padding: 5px;
 }
 
+.signup {
+    font-size: 18px;
+}
+
 /* Media queries */
 
 @media (max-width: 600px) {
@@ -193,10 +197,6 @@ textarea {
     input[type="submit"],
     textarea {
         font-size: 18px;
-        border: none;
-        resize: vertical;
         width: 250px;
-        margin: 10px 0;
-        padding: 5px;
     }
 }
