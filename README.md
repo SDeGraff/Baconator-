@@ -4,7 +4,7 @@
 
 ## Description
 
-TK
+Baconator is a movie review website dedicated to the works of Kevin Bacon where users can provide feedback on his filmography.
 
 ## Table of Contents
 
@@ -12,12 +12,11 @@ TK
 &bull; [Usage](#usage)<br>
 &bull; [License](#license)<br>
 &bull; [How to Contribute](#how-to-contribute)<br>
-&bull; [Tests](#tests)<br>
 &bull; [Questions](#questions)
 
 ## Installation
 
-TK
+To install Baconator, clone the repository to your local machine. While in the root directory of the project, install the Node dependencies by typing 'npm install', and then seed the database by typing 'npm seed'. Then, start the server by typing 'npm start' and open 'localhost:3001' in your browser.
 
 ## Usage
 
@@ -30,10 +29,6 @@ Copyright © 2022, edX Boot Camps LLC. Distributed under the [MIT](https://opens
 ## How to Contribute
 
 If you have a suggestion that would make this application better, please fork the repo and create a pull request.
-
-## Tests
-
-TK
 
 ## Questions
 
