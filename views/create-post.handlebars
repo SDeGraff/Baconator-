@@ -4,9 +4,9 @@
     </div>
     <div class="section-body">
         <form action="/post" method="POST">
-            <label for="title">{{title}}</label>
+            <label for="title">{{post.title}}</label>
             <input type="text" name="title" id="title">
-            <label for="content">{{message}}</label>
+            <label for="content">{{post.message}}</label>
             <textarea name="content" id="content" cols="30" rows="10"></textarea>
             <button class="create-post" type="submit">Create</button>
         </form>
