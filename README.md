@@ -24,7 +24,7 @@ To install or test Baconator, start by cloning the repository to your local mach
 &bull; [Node.js](https://nodejs.org/en/) and [Express.js](https://expressjs.com/)<br>
 &bull; [Handlebars.js](https://handlebarsjs.com/)<br>
 &bull; [MySQL](https://www.mysql.com/) and the [Sequelize ORM](https://sequelize.org/)<br>
-&bull; [Bcrypt](https://www.npmjs.com/package/bcrypt), [Chalk](https://www.npmjs.com/package/chalk) (new), [Dotenv](dotenv), []()eslint, [nodemon](https://www.npmjs.com/package/nodemon)<br>
+&bull; [Bcrypt](https://www.npmjs.com/package/bcrypt), [Chalk](https://www.npmjs.com/package/chalk) (new), [Dotenv](dotenv), [ESLint](https://eslint.org/), [nodemon](https://www.npmjs.com/package/nodemon)<br>
 &bull; [Heroku](https://www.heroku.com/)
 
 ## Usage
