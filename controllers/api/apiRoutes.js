@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const bcrypt = require('bcrypt');
-
+const chalk = require('chalk');
 
 router.post('/login', async (req, res) => {
   try {
@@ -68,7 +68,7 @@ router.post('/signup', async (req, res) => {
 //	res.redirect('/login');
 
 	} catch (err) {
-		console.log(err);
+		console.log(chalk.red(`Error: ${err}`));
 		res.status(400).json(err);
 	}
 });
@@ -94,7 +94,7 @@ router.post('/signup', async (req, res) => {
 //	res.redirect('/login');
 
 	} catch (err) {
-		console.log(err);
+		console.log(chalk.red(`Error: ${err}`));
 		res.status(400).json(err);
 	}
 });
@@ -117,7 +117,7 @@ router.post('/post', async (req, res) => {
 		} 
 	catch (err) 
 		{
-			console.log(err);
+			console.log(chalk.red(`Error: ${err}`));
 			res.status(400).json(err);
 		}
 });
@@ -140,7 +140,7 @@ router.put('/post', async (req, res) => {
 		} 
 	catch (err) 
 		{
-			console.log(err);
+			console.log(chalk.red(`Error: ${err}`));
 			res.status(400).json(err);
 		}
 });
@@ -158,7 +158,7 @@ router.delete('/post', async (req, res) => {
 		} 
 	catch (err) 
 		{
-			console.log(err);
+			console.log(chalk.red(`Error: ${err}`));
 			res.status(400).json(err);
 		}
 });
