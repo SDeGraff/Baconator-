@@ -19,7 +19,7 @@ Posts.init(
 		type: DataTypes.STRING,
 		allowNull: false,
 	},
-	body: {
+	message: {
 		type: DataTypes.TEXT,
 		allowNull: false,
 	},

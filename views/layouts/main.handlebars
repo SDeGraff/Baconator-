@@ -20,15 +20,12 @@
             <a href="/">
                 <h2>Home</h2>
             </a>
-            {{#if loggedIn}}
             <a href="/logout">
                 <h2>Logout</h2>
             </a>
-            {{else}}
             <a href="/login">
                 <h2>Login</h2>
             </a>
-            {{/if}}
         </nav>
         <div id="masthead">
             <img src="/Images/bacon.png" alt="Baconator Logo">
@@ -40,9 +37,7 @@
     </main>
     <footer>
     </footer>
-    {{#if logged_in}}
     <script src="/js/logout.js"></script>
-    {{/if}}
 </body>
 
 </html>
