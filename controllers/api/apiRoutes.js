@@ -8,29 +8,23 @@ router.post('/login', async (req, res) => {
 	const userData = await User.findOne({ where: { email: req.body.email } });
 
 	if (!userData) {
-	  res
-		.status(400)
-		.json({ responseMessage: 'Incorrect email or password, please try again.' });
+	  res.status(400).json({ responseMessage: 'Incorrect email or password, please try again.' });
 	  return;
 	}
 
 	const validPassword = await userData.checkPassword(req.body.password);
 
 	if (!validPassword) {
-	  res
-		.status(400)
-		.json({ responseMessage: 'Incorrect email or password, please try again.'});
+	  res.status(400).json({ responseMessage: 'Incorrect email or password, please try again.'});
 	  return;
 	}
 
 	req.session.save(() => {
 		req.session.user_id = userData.id;
 		req.session.logged_in = true;
-
-		res.json({ user: userData, responseMessage: 'You are now logged in!' });
 	});
 
-//	res.redirect('/post');
+	res.json({ user: userData, responseMessage: 'You are now logged in!' });
 
 	} catch (err) {
 		res.status(400).json(err);
@@ -61,11 +55,7 @@ router.post('/signup', async (req, res) => {
 		responseMessage: 'User Created'
 	})
 
-	res
-	.status(200)
-	.json(userData);
-
-//	res.redirect('/login');
+	res.status(200).json(userData);
 
 	} catch (err) {
 		console.log(chalk.red(`Error: ${err}`));
@@ -87,11 +77,7 @@ router.post('/signup', async (req, res) => {
 		responseMessage: 'User Created'
 	})
 
-	res
-	.status(200)
-	.json(userData);
-
-//	res.redirect('/login');
+	res.status(200).json(userData);
 
 	} catch (err) {
 		console.log(chalk.red(`Error: ${err}`));
@@ -112,7 +98,7 @@ router.post('/post', async (req, res) => {
 		{responseMessage: 'Post Created'}
 		)
 
-			res.status(200).json(postData);
+		res.status(200).json(postData);
 	
 		} 
 	catch (err) 
@@ -135,7 +121,7 @@ router.put('/post', async (req, res) => {
 			{responseMessage: 'Post Edited'}
 		)
 	
-			res.status(200).json(postData);
+		res.status(200).json(postData);
 
 		} 
 	catch (err) 
@@ -153,7 +139,7 @@ router.delete('/post', async (req, res) => {
 		{responseMessage: 'Post Deleted'}
 		)
 
-			res.status(200).json(postData);
+		res.status(200).json(postData);
 
 		} 
 	catch (err) 
