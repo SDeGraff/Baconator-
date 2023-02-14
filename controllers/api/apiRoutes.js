@@ -5,77 +5,162 @@ const bcrypt = require('bcrypt');
 
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+	const userData = await User.findOne({ where: { email: req.body.email } });
 
-    if (!userData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again. No user data' });
-      return;
-    }
-console.log(req.body.password);
-    const validPassword = await userData.checkPassword(req.body.password);
+	if (!userData) {
+	  res
+		.status(400)
+		.json({ responseMessage: 'Incorrect email or password, please try again.' });
+	  return;
+	}
 
-console.log(validPassword);
+	const validPassword = await userData.checkPassword(req.body.password);
 
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again. Password incorrect.'});
-      return;
-    }
+	if (!validPassword) {
+	  res
+		.status(400)
+		.json({ responseMessage: 'Incorrect email or password, please try again.'});
+	  return;
+	}
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now logged in!' });
-    });
+	req.session.save(() => {
+		req.session.user_id = userData.id;
+		req.session.logged_in = true;
 
-	res.redirect('/post');
+		res.json({ user: userData, responseMessage: 'You are now logged in!' });
+	});
 
-  } catch (err) {
-    res.status(400).json(err);
-  }
+//	res.redirect('/post');
+
+	} catch (err) {
+		res.status(400).json(err);
+	}
 });
 
 router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
+	if (req.session.logged_in) {
+		req.session.destroy(() => {
+			res.status(204).end();
+		});
+	} else {
+		res.status(404).end();
+	}
 });
 
 
 
 router.post('/signup', async (req, res) => {
   try {
-    const userName = req.body.userName;
+	const userName = req.body.userName;
 	const userEmail = req.body.email;
 
 	const userData = await User.create({
 		name: userName,
 		email: userEmail,
 		password: req.body.password,
-		message: 'User Created'
+		responseMessage: 'User Created'
 	})
 
 	res
 	.status(200)
 	.json(userData);
 
-	res.redirect('/login');
+//	res.redirect('/login');
 
-  } catch (err) {
-	console.log(err);
+	} catch (err) {
+		console.log(err);
+		res.status(400).json(err);
+	}
+});
 
- //   if(errors.path == 'email') {alert('The data is not valid')};
 
-	res.status(400).json(err);
-  }
+
+router.post('/signup', async (req, res) => {
+  try {
+	const userName = req.body.userName;
+	const userEmail = req.body.email;
+
+	const userData = await User.create({
+		name: userName,
+		email: userEmail,
+		password: req.body.password,
+		responseMessage: 'User Created'
+	})
+
+	res
+	.status(200)
+	.json(userData);
+
+//	res.redirect('/login');
+
+	} catch (err) {
+		console.log(err);
+		res.status(400).json(err);
+	}
+});
+
+
+
+
+router.post('/post', async (req, res) => {
+	try {
+		const title = req.body.title;
+		const message = req.body.message;
+		const postData = await Posts.create(
+		{title: title},
+		{message: message},
+		{responseMessage: 'Post Created'}
+		)
+
+			res.status(200).json(postData);
+	
+		} 
+	catch (err) 
+		{
+			console.log(err);
+			res.status(400).json(err);
+		}
+});
+
+router.put('/post', async (req, res) => {
+	try {
+		const title = req.body.title;
+		const message = req.body.message;
+		const id = req.body.message;
+
+		const postData = await Posts.update(
+			{title: title},
+			{message: message},
+			{where: {id: id}},
+			{responseMessage: 'Post Edited'}
+		)
+	
+			res.status(200).json(postData);
+
+		} 
+	catch (err) 
+		{
+			console.log(err);
+			res.status(400).json(err);
+		}
+});
+
+router.delete('/post', async (req, res) => {
+	try {
+		const id = req.body.id;
+		const postData = await Posts.destroy(
+		{where: {id: id}},
+		{responseMessage: 'Post Deleted'}
+		)
+
+			res.status(200).json(postData);
+
+		} 
+	catch (err) 
+		{
+			console.log(err);
+			res.status(400).json(err);
+		}
 });
 
 
