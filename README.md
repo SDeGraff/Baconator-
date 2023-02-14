@@ -17,7 +17,7 @@ Baconator is a movie review website dedicated to the works of Kevin Bacon where 
 
 ## Installation & Testing
 
-To install or test Baconator, start by cloning the repository to your local machine. While in the root directory of the project, install the Node dependencies by typing `npm install`, and then seed the database by typing `npm seed`. Make sure to create a MySQL database and seed it with test data. Finally, start the server by typing `npm start` and open `localhost:3001` in your browser.
+To install or test Baconator, start by cloning the repository to your local machine. While in the root directory of the project, install the Node dependencies by typing `npm install`, and then seed the database by typing `npm seed`. Make sure to create a MySQL database, seed it with test data, and configure database access in the .env file. Finally, start the server by typing `npm start` and open `localhost:3001` in your browser.
 
 ## Technologies Used
 
