@@ -8,7 +8,7 @@ const newFormHandler = async function(event) {
       method: 'POST',
       body: JSON.stringify({
         title,
-        body,
+        message,
       }),
       headers: { 'Content-Type': 'application/json' },
     });
