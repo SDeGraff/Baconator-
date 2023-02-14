@@ -33,8 +33,7 @@ To install or test Baconator, start by cloning the repository to your local mach
 Deployed application: [Heroku URL](Heroku URL)
 
 ## Screenshot
-
-    ![alt text](public/Images/baconator_screenshot.png)
+![Baconator](public/Images/baconator_screenshot.pngraw=true "Baconator)
 
 ## License
 
