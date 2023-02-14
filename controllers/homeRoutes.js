@@ -3,22 +3,22 @@ const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
-	Post.findAll({
-		include: [
-			{
-				model: User
-			}
-		]
-	})
-	.then(posts => {
-		console.log(posts);
-		posts = posts.map(post => post.get({ plain: true }));
-		res.render('homepage', { posts });
-	})
-	.catch(err => {
-		console.log(err);
-		res.status(500).json(err);
-	});
+	// Post.findAll({
+	// 	include: [
+	// 		{
+	// 			model: User
+	// 		}
+	// 	]
+	// })
+	// .then(posts => {
+	// 	console.log(posts);
+	// 	posts = posts.map(post => post.get({ plain: true }));
+		res.render('homepage');
+	// })
+	// .catch(err => {
+	// 	console.log(err);
+	// 	res.status(500).json(err);
+	// });
 });
 
 
