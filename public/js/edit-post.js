@@ -6,28 +6,30 @@ const editFormHandler = async function(event) {
   const title = document.querySelector('input[name="post-title"]').value;
   const body = document.querySelector('textarea[name="post-body"]').value;
 
-  await fetch(`/api/post/${postId}`, {
+  await fetch(`/api/post/`, {
     method: 'PUT',
     body: JSON.stringify({
       title,
       message,
-      postId
+      id
     }),
     headers: {
       'Content-Type': 'application/json'
     }
   });
 
-  document.location.replace('/dashboard');
+  document.location.replace('/homepage');
 };
 
 const deleteClickHandler = async function() {
-    await fetch(`/api/post/${postId}`, {
-      method: 'DELETE'
-    });
-  
-    document.location.replace('/dashboard');
-  };
+    await fetch(`/api/post/`, {
+      method: 'DELETE',
+      body: JSON.stringify({
+        id,
+    }),
+});
+    document.location.replace('/homepage');
+  },
 
 document
   .querySelector('#edit-post-form')
