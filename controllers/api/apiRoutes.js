@@ -1,30 +1,30 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const bcrypt = require('bcrypt');
-const chalk = require('chalk');
+import chalk from 'chalk';
 
 router.post('/login', async (req, res) => {
-  try {
-	const userData = await User.findOne({ where: { email: req.body.email } });
+	try {
+		const userData = await User.findOne({ where: { email: req.body.email } });
 
-	if (!userData) {
-	  res.status(400).json({ responseMessage: 'Incorrect email or password, please try again.' });
-	  return;
-	}
+		if (!userData) {
+			res.status(400).json({ responseMessage: 'Incorrect email or password, please try again.' });
+			return;
+		}
 
-	const validPassword = await userData.checkPassword(req.body.password);
+		const validPassword = await userData.checkPassword(req.body.password);
 
-	if (!validPassword) {
-	  res.status(400).json({ responseMessage: 'Incorrect email or password, please try again.'});
-	  return;
-	}
+		if (!validPassword) {
+			res.status(400).json({ responseMessage: 'Incorrect email or password, please try again.' });
+			return;
+		}
 
-	req.session.save(() => {
-		req.session.user_id = userData.id;
-		req.session.logged_in = true;
-	});
+		req.session.save(() => {
+			req.session.user_id = userData.id;
+			req.session.logged_in = true;
+		});
 
-	res.json({ user: userData, responseMessage: 'You are now logged in!' });
+		res.json({ user: userData, responseMessage: 'You are now logged in!' });
 
 	} catch (err) {
 		res.status(400).json(err);
@@ -44,18 +44,18 @@ router.post('/logout', (req, res) => {
 
 
 router.post('/signup', async (req, res) => {
-  try {
-	const userName = req.body.userName;
-	const userEmail = req.body.email;
+	try {
+		const userName = req.body.userName;
+		const userEmail = req.body.email;
 
-	const userData = await User.create({
-		name: userName,
-		email: userEmail,
-		password: req.body.password,
-		responseMessage: 'User Created'
-	})
+		const userData = await User.create({
+			name: userName,
+			email: userEmail,
+			password: req.body.password,
+			responseMessage: 'User Created'
+		})
 
-	res.status(200).json(userData);
+		res.status(200).json(userData);
 
 	} catch (err) {
 		console.log(chalk.red(`Error: ${err}`));
@@ -66,18 +66,18 @@ router.post('/signup', async (req, res) => {
 
 
 router.post('/signup', async (req, res) => {
-  try {
-	const userName = req.body.userName;
-	const userEmail = req.body.email;
+	try {
+		const userName = req.body.userName;
+		const userEmail = req.body.email;
 
-	const userData = await User.create({
-		name: userName,
-		email: userEmail,
-		password: req.body.password,
-		responseMessage: 'User Created'
-	})
+		const userData = await User.create({
+			name: userName,
+			email: userEmail,
+			password: req.body.password,
+			responseMessage: 'User Created'
+		})
 
-	res.status(200).json(userData);
+		res.status(200).json(userData);
 
 	} catch (err) {
 		console.log(chalk.red(`Error: ${err}`));
@@ -93,19 +93,18 @@ router.post('/post', async (req, res) => {
 		const title = req.body.title;
 		const message = req.body.message;
 		const postData = await Posts.create(
-		{title: title},
-		{message: message},
-		{responseMessage: 'Post Created'}
+			{ title: title },
+			{ message: message },
+			{ responseMessage: 'Post Created' }
 		)
 
 		res.status(200).json(postData);
-	
-		} 
-	catch (err) 
-		{
-			console.log(chalk.red(`Error: ${err}`));
-			res.status(400).json(err);
-		}
+
+	}
+	catch (err) {
+		console.log(chalk.red(`Error: ${err}`));
+		res.status(400).json(err);
+	}
 });
 
 router.put('/post', async (req, res) => {
@@ -115,38 +114,36 @@ router.put('/post', async (req, res) => {
 		const id = req.body.message;
 
 		const postData = await Posts.update(
-			{title: title},
-			{message: message},
-			{where: {id: id}},
-			{responseMessage: 'Post Edited'}
+			{ title: title },
+			{ message: message },
+			{ where: { id: id } },
+			{ responseMessage: 'Post Edited' }
 		)
-	
+
 		res.status(200).json(postData);
 
-		} 
-	catch (err) 
-		{
-			console.log(chalk.red(`Error: ${err}`));
-			res.status(400).json(err);
-		}
+	}
+	catch (err) {
+		console.log(chalk.red(`Error: ${err}`));
+		res.status(400).json(err);
+	}
 });
 
 router.delete('/post', async (req, res) => {
 	try {
 		const id = req.body.id;
 		const postData = await Posts.destroy(
-		{where: {id: id}},
-		{responseMessage: 'Post Deleted'}
+			{ where: { id: id } },
+			{ responseMessage: 'Post Deleted' }
 		)
 
 		res.status(200).json(postData);
 
-		} 
-	catch (err) 
-		{
-			console.log(chalk.red(`Error: ${err}`));
-			res.status(400).json(err);
-		}
+	}
+	catch (err) {
+		console.log(chalk.red(`Error: ${err}`));
+		res.status(400).json(err);
+	}
 });
 
 
