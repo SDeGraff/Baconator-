@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const bcrypt = require('bcrypt');
-import chalk from 'chalk';
+const chalk = require('chalk');
 
 router.post('/login', async (req, res) => {
 	try {
