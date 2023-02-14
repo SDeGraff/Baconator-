@@ -8,11 +8,11 @@ Baconator is a movie review website dedicated to the works of Kevin Bacon where 
 
 ## Table of Contents
 
-&bull; [Installation & Testing](#installation-&-testing)<br>
+&bull; [Installation & Testing](#installation--testing)<br>
 &bull; [Usage](#usage)<br>
 &bull; [License](#license)<br>
 &bull; [How to Contribute](#how-to-contribute)<br>
-&bull; [Tests](#tests)
+&bull; [Tests](#tests)<br>
 &bull; [Questions](#questions)
 
 ## Installation & Testing
