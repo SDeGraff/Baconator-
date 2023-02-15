@@ -7,7 +7,7 @@ const loginFormHandler = async (event) => {
   const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) {
-    const response = await fetch('/api/login', {
+    const response = await fetch('/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -16,10 +16,13 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       console.log("bacon");
       document.location.replace('/createpost');
+      // document.location.replace('/');
+
     } else {
       alert('Failed to log in');
     }
   }
 };
 
-document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('#login-form')
+document.addEventListener('submit', loginFormHandler);
