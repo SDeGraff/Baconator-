@@ -1,14 +1,13 @@
-{{#each post as |post| }}
 <section class="post">
     <div class="post-header">
         <div class="post-headline">
-            <h3>{{post.title}}</h2>
+            <h3>POST</h3>
         </div>
-        <div class="post-user-date">
-            <h4>Posted on {{format_date post.date_created}}</h4>
+        <div class="post-user">
+            <img class="kevin" src="/Images/Kevin.jpg" alt="User Photo" class="UserPhoto">
+			<h4>Posted by Kevin Bacon</h4>
         </div>
     </div>
-    <p>{{post.message}}</p>
+    <p>This is the body of a blog post.</p>
 </section>
-{{/each}}
 
