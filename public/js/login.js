@@ -1,6 +1,6 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
-
+console.log('kevinBacon');
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
@@ -10,9 +10,10 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+    console.log("hello");
     if (response.ok) {
-      document.location.replace('/');
+      console.log("bacon");
+      document.location.replace('/createpost');
     } else {
       alert('Failed to log in');
     }
