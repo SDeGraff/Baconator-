@@ -12,6 +12,14 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+//   for (const post of postData) {
+//     await Post.create({
+//       ...post
+//     });
+// }
+
+// const posts = await Post.findAll(); 
+
   process.exit(0);
 };
 

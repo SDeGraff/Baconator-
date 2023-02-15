@@ -1,23 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Chango&family=PT+Sans+Narrow:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Chango&family=PT+Sans+Narrow:wght@400;700&display=swap");
 
-/* Bacon colors */
+/* Colors */
 
 :root {
-    --tan: #F2BE7E;
-    --red: #A61414;
-    --lightred: #BF2424;
-    --darkpink: #D93B3B;
-    --pink: #F25757;
-    --white: #FFFFFF;
-    --lightpink: #FF6666;
+    --tan: #f2be7e;
+    --red: #a61414;
+    --lightred: #bf2424;
+    --darkpink: #d93b3b;
+    --pink: #f25757;
+    --white: #ffffff;
+    --lightpink: #ff6666;
     --purple: #6600cc;
 }
+
+/* Primary */
 
 html {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'PT Sans Narrow',Arial, Helvetica, sans-serif;
+    font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -35,29 +37,33 @@ a:hover {
 }
 
 p {
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: "PT Sans Narrow", sans-serif;
     font-size: 18px;
 }
 
+/* Header */
+
 h1 {
-    font-family: 'Chango', cursive;
+    font-family: "Chango", cursive;
     color: var(--white);
     font-size: 64px;
 }
 
 h3 {
     font-size: 32px;
-    font-family: 'Chango', cursive;
+    font-family: "Chango", cursive;
     font-weight: 700;
     color: var(--white);
 }
 
 h4 {
-    font-size: 24px;
-    font-family: 'Caveat', cursive;
+    font-size: 28px;
+    font-family: "Caveat", cursive;
     font-weight: 700;
     color: var(--white);
 }
+
+/* Nav */
 
 nav {
     display: flex;
@@ -68,13 +74,15 @@ nav {
 nav a {
     width: 150px;
     font-size: 22px;
-    font-family: 'Chango', cursive;
+    font-family: "Chango", cursive;
     font-weight: bold;
     color: var(--white);
     text-align: center;
     text-decoration: none;
     margin: 15px;
 }
+
+/* Logo */
 
 #masthead {
     display: flex;
@@ -88,6 +96,8 @@ nav a {
     width: 78px;
     margin-right: 10px;
 }
+
+/* Sections */
 
 main {
     display: flex;
@@ -111,6 +121,8 @@ section {
     padding: 15px;
 }
 
+/* Buttons and text fields */
+
 button {
     background-color: var(--red);
     border: none;
@@ -128,10 +140,63 @@ input[type="text"],
 input[type="password"],
 input[type="submit"],
 textarea {
-    font-size: 12px;
+    font-size: 18px;
     border: none;
     resize: vertical;
-    width: 200px;
+    width: 300px;
     margin: 10px 0;
     padding: 5px;
+}
+
+.signup {
+    font-size: 18px;
+}
+
+/* Media queries */
+
+@media (max-width: 600px) {
+    .post-headline {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    #masthead {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        margin: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 0;
+        padding: 10px;
+        font-size: 50px;
+    }
+
+    h3 {
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    h4 {
+        font-size: 24px;
+        font-weight: normal;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: normal;
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"],
+    textarea {
+        font-size: 18px;
+        width: 250px;
+    }
 }

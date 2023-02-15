@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post } = require('../../models');
 const bcrypt = require('bcrypt');
 const chalk = require('chalk');
 
@@ -92,7 +92,7 @@ router.post('/post', async (req, res) => {
 	try {
 		const title = req.body.title;
 		const message = req.body.message;
-		const postData = await Posts.create(
+		const postData = await Post.create(
 			{ title: title },
 			{ message: message },
 			{ responseMessage: 'Post Created' }
@@ -113,7 +113,7 @@ router.put('/post', async (req, res) => {
 		const message = req.body.message;
 		const id = req.body.message;
 
-		const postData = await Posts.update(
+		const postData = await Post.update(
 			{ title: title },
 			{ message: message },
 			{ where: { id: id } },
@@ -132,7 +132,7 @@ router.put('/post', async (req, res) => {
 router.delete('/post', async (req, res) => {
 	try {
 		const id = req.body.id;
-		const postData = await Posts.destroy(
+		const postData = await Post.destroy(
 			{ where: { id: id } },
 			{ responseMessage: 'Post Deleted' }
 		)
