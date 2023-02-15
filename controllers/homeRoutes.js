@@ -1,11 +1,14 @@
 const router = require('express').Router();
-const { Post } = require('../models');
+const sequelize = require('../config/connection');
+const {Post} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
 	try {
-		const postData = await Post.findAll();
-		res.render('homepage', { postData });
+		const [posts, metadata] = await sequelize.query("Select * from Posts order by ID DESC");
+		console.log(JSON.stringify(posts));
+
+		res.render('homepage', { posts });
 	} catch (err) {
 		res.status(500).json(err);
 		console.log(err);
