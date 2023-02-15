@@ -4,14 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
 	try {
-		const postData = await Post.findAll({
-			include: [
-				{
-					model: User,
-					
-				},
-			],
-		});
+		const postData = await Post.findAll();
 		res.render('homepage', { postData });
 	} catch (err) {
 		res.status(500).json(err);
