@@ -22,14 +22,14 @@ const editFormHandler = async function(event) {
 };
 
 const deleteClickHandler = async function() {
-    await fetch(`/api/post/`, {
+    await fetch(`/api/post/`,{
       method: 'DELETE',
       body: JSON.stringify({
-        id,
+        id
     }),
 });
     document.location.replace('/homepage');
-  },
+  };
 
 document
   .querySelector('#edit-post-form')

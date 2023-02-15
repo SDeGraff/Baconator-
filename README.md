@@ -10,6 +10,7 @@ Baconator is a movie review website dedicated to the works of Kevin Bacon where 
 
 &bull; [Installation & Testing](#installation--testing)<br>
 &bull; [Usage](#usage)<br>
+&bull; [Screenshot](#screenshot)<br>
 &bull; [License](#license)<br>
 &bull; [How to Contribute](#how-to-contribute)<br>
 &bull; [Tests](#tests)<br>
@@ -31,7 +32,8 @@ To install or test Baconator, start by cloning the repository to your local mach
 
 Deployed application: [Heroku URL](Heroku URL)
 
-UPLOAD SCREENSHOT
+## Screenshot
+![Baconator image](public/Images/baconator_screenshot.png?raw=true "Baconator")
 
 ## License
 

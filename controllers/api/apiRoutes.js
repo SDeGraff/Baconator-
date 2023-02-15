@@ -65,28 +65,6 @@ router.post('/signup', async (req, res) => {
 
 
 
-router.post('/signup', async (req, res) => {
-	try {
-		const userName = req.body.userName;
-		const userEmail = req.body.email;
-
-		const userData = await User.create({
-			name: userName,
-			email: userEmail,
-			password: req.body.password,
-			responseMessage: 'User Created'
-		})
-
-		res.status(200).json(userData);
-
-	} catch (err) {
-		console.log(chalk.red(`Error: ${err}`));
-		res.status(400).json(err);
-	}
-});
-
-
-
 
 router.post('/post', async (req, res) => {
 	try {
