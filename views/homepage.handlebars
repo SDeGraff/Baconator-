@@ -1,13 +1,17 @@
+
+
 <section class="post">
+	{{#each posts}}
     <div class="post-header">
         <div class="post-headline">
-            <h3>POST</h3>
+            <h3>Title: {{title}}</h3>
         </div>
         <div class="post-user">
             <img class="kevin" src="/Images/Kevin.jpg" alt="User Photo" class="UserPhoto">
 			<h4>Posted by Kevin Bacon</h4>
         </div>
     </div>
-    <p>This is the body of a blog post.</p>
+    <p>Message: {{message}}</p>
+	{{/each}}
 </section>
 
