@@ -4,14 +4,14 @@
 	{{#each posts}}
     <div class="post-header">
         <div class="post-headline">
-            <h3>Title: {{title}}</h3>
+            <h3>{{this.Title}}</h3>
         </div>
         <div class="post-user">
             <img class="kevin" src="/Images/Kevin.jpg" alt="User Photo" class="UserPhoto">
 			<h4>Posted by Kevin Bacon</h4>
         </div>
     </div>
-    <p>Message: {{message}}</p>
+    <p>{{this.Message}}</p>
 	{{/each}}
 </section>
 
