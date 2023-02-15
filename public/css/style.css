@@ -125,7 +125,7 @@ section {
 
 .post {
     width: 95%;
-    border: 3px solid var(--brown);
+    border: 3px solid var(--white);
     margin: 10px;
 }
 
@@ -178,6 +178,10 @@ textarea {
 
 .signup {
     font-size: 18px;
+}
+
+.kevin {
+    width: 50px;
 }
 
 /* Media queries */
