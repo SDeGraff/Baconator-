@@ -31,10 +31,6 @@ const deleteClickHandler = async function() {
     document.location.replace('/homepage');
   };
 
-document
-  .querySelector('#edit-post-form')
-  .addEventListener('submit', editFormHandler);
+document.querySelector('#edit-post-form').addEventListener('submit', editFormHandler);
 
-document
-  .querySelector('#delete-btn')
-  .addEventListener('click', deleteClickHandler);
+document.querySelector('#delete-btn').addEventListener('click', deleteClickHandler);
