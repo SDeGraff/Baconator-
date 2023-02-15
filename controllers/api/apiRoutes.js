@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { User, Post } = require('../../models');
 const bcrypt = require('bcrypt');
 const chalk = require('chalk');
-const sequelize = require('sequelize');
 
 router.post('/login', async (req, res) => {
 	try {
@@ -25,7 +24,7 @@ router.post('/login', async (req, res) => {
 			req.session.logged_in = true;
 		});
 
-		res.json({ user: userData, responseMessage: 'You are now logged in!' });
+		res.status(200).json({ user: userData, responseMessage: 'You are now logged in!' });
 
 	} catch (err) {
 		res.status(400).json(err);
