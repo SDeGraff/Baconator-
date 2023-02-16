@@ -7,7 +7,7 @@ const loginFormHandler = async (event) => {
   const password = document.querySelector('#password-login').value.trim();
 
   if (email && password) {
-    const response = await fetch( '', {
+    const response = await fetch('/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
@@ -16,6 +16,8 @@ const loginFormHandler = async (event) => {
     console.log('footloose');
     if (response.ok) {
       document.location.replace('/createpost');
+      // document.location.replace('/');
+
     } else {
       alert('Failed to log in');
     }
