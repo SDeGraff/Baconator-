@@ -69,6 +69,8 @@ nav {
     display: flex;
     justify-content: normal;
     align-items: flex-start;
+    padding: 0px;
+    margin-top: 0px;
 }
 
 nav a {
@@ -79,12 +81,13 @@ nav a {
     color: var(--white);
     text-align: center;
     text-decoration: none;
-    margin: 15px;
+    /* margin: 15px; */
 }
 
 /* Logo */
 
-#masthead {
+/* CM messing around with the style of page code below comment out created by michael */
+/* #masthead {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -95,6 +98,35 @@ nav a {
 #masthead img {
     width: 78px;
     margin-right: 10px;
+} */
+
+/* CM CHANGED/ADD */
+#masthead {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* align-content: space-around; */
+    justify-content: space-around;
+    /* margin: 20px 50px; */
+    padding: 10px 15px;
+}
+
+/* PIGKEVIN IMAGE (CM) */
+#masthead img {
+    width: 25%;
+    /* margin-right: 10px; */
+}
+
+/* BACONATOR MAIN TITLE (CM) */
+h1 {
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+}
+
+h2 {
+    padding: 5px;
+    margin: 5px;
 }
 
 /* Sections */
@@ -205,6 +237,7 @@ textarea {
         margin: 0;
         padding: 10px;
         font-size: 50px;
+
     }
 
     h3 {
