@@ -1,0 +1,33 @@
+
+
+<section class="post">
+	{{#each posts}}
+    <div class="post-header">
+        <div class="post-headline">
+            <h3>{{this.Title}}</h3>
+        </div>
+        <div class="post-user">
+            <img class="kevin" src="/Images/Kevin.jpg" alt="User Photo" class="UserPhoto">
+			<h4>Posted by Kevin Bacon</h4>
+        </div>
+    </div>
+    <p>{{this.Message}}</p>
+	{{/each}}
+</section>
+
+<section class="post">
+    <div class="section-header">
+        <h3>Create New Post</h3>
+    </div>
+    <div class="section-body">
+        <form id="new-post-form">
+            <label for="title">{{post.title}}</label>
+            <input type="text" name="title" id="title">
+            <label for="content">{{post.message}}</label>
+            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            <button class="create-post" type="submit">Create</button>
+        </form>
+    </div>
+</section>
+
+<script src="/js/create-post.js"></script>
