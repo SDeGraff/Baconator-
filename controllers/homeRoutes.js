@@ -3,11 +3,13 @@ const sequelize = require('../config/connection');
 const {Post} = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', async (_req, res) => {
 	try {
 		const [posts, metadata] = await sequelize.query("Select * from Posts order by ID DESC");
 
 		res.render('homepage', { posts });
+		res.render('/homepage');
+
 	} catch (err) {
 		res.status(500).json(err);
 		console.log(err);

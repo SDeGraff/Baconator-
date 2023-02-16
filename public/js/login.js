@@ -9,14 +9,17 @@ const loginFormHandler = async (event) => {
   if (email && password) {
     const response = await fetch('/login', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+      email, password, 
+    }),
+      headers: {
+        'Content-Type': 'application/json'
+      },
     });
     console.log("hello");
     if (response.ok) {
       console.log("bacon");
       document.location.replace('/createpost');
-      // document.location.replace('/');
 
     } else {
       alert('Failed to log in');
