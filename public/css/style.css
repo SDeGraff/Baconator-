@@ -63,7 +63,7 @@ h4 {
     font-weight: 700;
     color: var(--white);
     position: absolute;
-    
+
 }
 
 /* Nav */
@@ -72,8 +72,6 @@ nav {
     display: flex;
     justify-content: normal;
     align-items: flex-start;
-    padding: 0px;
-    margin-top: 0px;
 }
 
 nav a {
@@ -84,13 +82,12 @@ nav a {
     color: var(--white);
     text-align: center;
     text-decoration: none;
-    /* margin: 15px; */
+    margin: 15px;
 }
 
 /* Logo */
 
-/* CM messing around with the style of page code below comment out created by michael */
-/* #masthead {
+#masthead {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -101,7 +98,9 @@ nav a {
 #masthead img {
     width: 78px;
     margin-right: 10px;
-} */
+}
+
+*/
 
 /* CM CHANGED/ADD */
 #masthead {
@@ -174,14 +173,13 @@ section {
     height: 50px;
     padding: 40px;
     background-color: var(--pink);
-    margin: 10px; 
+    margin: 10px;
 
 }
 
 .post-headline {
     flex-basis: 70%;
     padding: 5px;
-   
 }
 
 .post-user {
@@ -199,12 +197,12 @@ button {
     width: 200px;
     border-radius: 15px;
 }
-
+​
 button:hover {
     background-color: var(--darkpink);
 }
 
-input[type="text"],
+/* input[type="text"],
 input[type="password"],
 input[type="submit"],
 textarea {
@@ -214,6 +212,19 @@ textarea {
     width: 300px;
     margin: 10px 0;
     padding: 5px;
+} */
+
+input[type="text"] {
+    padding: 8px;
+    margin: 15px;
+    font-size: 15px;
+}
+
+#new-post-form {
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .signup {
@@ -239,33 +250,32 @@ textarea {
         justify-content: center;
         margin: 20px;
     }
-
+	
     h1 {
         text-align: center;
         margin: 0;
         padding: 10px;
         font-size: 50px;
-
     }
-
+	
     h3 {
         font-size: 32px;
         font-weight: bold;
     }
-
+	
     h4 {
         font-size: 24px;
         font-weight: normal;
     }
-
-    p {
+	
+	p {
         font-size: 16px;
         line-height: 20px;
         font-weight: normal;
         padding: 15px;
     }
-
-    input[type="text"],
+	
+	input[type="text"],
     input[type="password"],
     input[type="submit"],
     textarea {
