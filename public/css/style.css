@@ -63,7 +63,7 @@ h4 {
     font-weight: 700;
     color: var(--white);
     position: absolute;
-    
+
 }
 
 /* Nav */
@@ -98,7 +98,9 @@ nav a {
 #masthead img {
     width: 78px;
     margin-right: 10px;
-} */
+}
+
+*/
 
 /* CM CHANGED/ADD */
 #masthead {
@@ -171,14 +173,14 @@ section {
     height: 50px;
     padding: 40px;
     background-color: var(--pink);
-    margin: 10px; 
+    margin: 10px;
 
 }
 
 .post-headline {
     flex-basis: 70%;
     padding: 5px;
-   
+
 }
 
 .post-user {
@@ -201,7 +203,7 @@ button:hover {
     background-color: var(--darkpink);
 }
 
-input[type="text"],
+/* input[type="text"],
 input[type="password"],
 input[type="submit"],
 textarea {
@@ -211,7 +213,22 @@ textarea {
     width: 300px;
     margin: 10px 0;
     padding: 5px;
+} */
+
+input[type="text"] {
+    padding: 8px;
+    margin: 15px;
+    font-size: 15px;
 }
+
+
+#new-post-form {
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
 
 .signup {
     font-size: 18px;
