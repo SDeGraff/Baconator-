@@ -57,10 +57,13 @@ h3 {
 }
 
 h4 {
+    display: flex;
     font-size: 28px;
     font-family: "Caveat", cursive;
     font-weight: 700;
     color: var(--white);
+    position: absolute;
+    
 }
 
 /* Nav */
@@ -113,7 +116,7 @@ nav a {
 
 /* PIGKEVIN IMAGE (CM) */
 #masthead img {
-    width: 25%;
+    width: 20%;
     /* margin-right: 10px; */
 }
 
@@ -159,6 +162,7 @@ section {
     width: 95%;
     border: 3px solid var(--white);
     margin: 10px;
+    padding: 20px;
 }
 
 .post-header {
@@ -168,17 +172,21 @@ section {
     align-items: center;
     width: 100%;
     height: 50px;
-    padding: 15px;
+    padding: 40px;
     background-color: var(--pink);
+    margin: 10px; 
+
 }
 
 .post-headline {
     flex-basis: 70%;
+    padding: 5px;
+   
 }
 
 .post-user {
     flex-basis: 30%;
-    text-align: right;
+    text-align: end;
 }
 
 /* Buttons and text fields */
