@@ -226,7 +226,7 @@ input[type="text"] {
 
 
 
-#new-post-form {
+.new-post-form {
 	margin: 20px;
 	padding: 20px;
 	display: flex;
@@ -246,6 +246,10 @@ input[type="text"] {
 	font-size: 28px;
 	font-family: "Caveat", cursive;
 	font-weight: 700;
+}
+
+td {
+	vertical-align: bottom;
 }
 
 /* Media queries */
