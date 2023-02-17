@@ -7,8 +7,7 @@ router.get('/', async (_req, res) => {
 	try {
 		const [posts, metadata] = await sequelize.query("Select * from Posts order by ID DESC");
 
-		res.render('homepage', { posts });
-		res.render('/homepage');
+		res.render('newHomepage', { posts });
 
 	} catch (err) {
 		res.status(500).json(err);
