@@ -3,287 +3,296 @@
 /* Colors */
 
 :root {
-    --tan: #f2be7e;
-    --red: #a61414;
-    --lightred: #bf2424;
-    --darkpink: #d93b3b;
-    --pink: #f25757;
-    --white: #ffffff;
-    --lightpink: #ff6666;
-    --purple: #6600cc;
+	--tan: #f2be7e;
+	--red: #a61414;
+	--lightred: #bf2424;
+	--darkpink: #d93b3b;
+	--pink: #f25757;
+	--white: #ffffff;
+	--lightpink: #ff6666;
+	--purple: #6600cc;
 }
 
 /* Primary */
 
 html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: var(--lightpink);
+	background-color: var(--lightpink);
 }
 
 a {
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--white);
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--white);
 }
 
 a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 p {
-    font-family: "PT Sans Narrow", sans-serif;
-    font-size: 18px;
+	font-family: "PT Sans Narrow", sans-serif;
+	font-size: 18px;
 }
 
 /* Header */
 
 h1 {
-    font-family: "Chango", cursive;
-    color: var(--white);
-    font-size: 64px;
+	font-family: "Chango", cursive;
+	color: var(--white);
+	font-size: 64px;
 }
 
 h3 {
-    font-size: 32px;
-    font-family: "Chango", cursive;
-    font-weight: 700;
-    color: var(--white);
+	font-size: 32px;
+	font-family: "Chango", cursive;
+	font-weight: 700;
+	color: var(--white);
 }
 
 h4 {
-    display: flex;
-    font-size: 28px;
-    font-family: "Caveat", cursive;
-    font-weight: 700;
-    color: var(--white);
-    position: absolute;
+	display: flex;
+	font-size: 28px;
+	font-family: "Caveat", cursive;
+	font-weight: 700;
+	color: var(--white);
+	position: absolute;
 
 }
 
 /* Nav */
 
 nav {
-    display: flex;
-    justify-content: normal;
-    align-items: flex-start;
+	display: flex;
+	justify-content: normal;
+	align-items: flex-start;
 }
 
 nav a {
-    width: 150px;
-    font-size: 22px;
-    font-family: "Chango", cursive;
-    font-weight: bold;
-    color: var(--white);
-    text-align: center;
-    text-decoration: none;
-    margin: 15px;
+	width: 150px;
+	font-size: 22px;
+	font-family: "Chango", cursive;
+	font-weight: bold;
+	color: var(--white);
+	text-align: center;
+	text-decoration: none;
+	margin: 15px;
 }
 
 /* Logo */
 
 #masthead {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin: 20px 50px;
-    padding: 10px 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	margin: 20px 50px;
+	padding: 10px 15px;
 }
 
 #masthead img {
-    width: 78px;
-    margin-right: 10px;
+	width: 78px;
+	margin-right: 10px;
 }
 
 */
 
 /* CM CHANGED/ADD */
 #masthead {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    /* align-content: space-around; */
-    justify-content: space-around;
-    /* margin: 20px 50px; */
-    padding: 10px 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	/* align-content: space-around; */
+	justify-content: space-around;
+	/* margin: 20px 50px; */
+	padding: 10px 15px;
 }
 
 /* PIGKEVIN IMAGE (CM) */
 #masthead img {
-    width: 20%;
-    /* margin-right: 10px; */
+	width: 20%;
+	/* margin-right: 10px; */
 }
 
 /* BACONATOR MAIN TITLE (CM) */
 h1 {
-    text-align: center;
-    padding: 15px;
-    margin: 15px;
+	text-align: center;
+	padding: 15px;
+	margin: 15px;
 }
 
 h2 {
-    padding: 5px;
-    margin: 5px;
+	padding: 5px;
+	margin: 5px;
 }
 
 /* Sections */
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 section {
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    margin: 10px;
+	display: flex;
+	flex-direction: column;
+	width: 95%;
+	margin: 10px;
 }
 
 .section-header {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 50px;
-    padding: 15px;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 50px;
+	padding: 15px;
 }
 
 /* Posts */
 
 .post {
-    width: 95%;
-    border: 3px solid var(--white);
-    margin: 10px;
-    padding: 20px;
+	width: 95%;
+	border: 3px solid var(--white);
+	margin: 10px;
+	padding: 20px;
 }
 
 .post-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    padding: 40px;
-    background-color: var(--pink);
-    margin: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 50px;
+	padding: 40px;
+	background-color: var(--pink);
+	margin: 10px;
 
 }
 
 .post-headline {
-    flex-basis: 70%;
-    padding: 5px;
+	flex-basis: 70%;
+	padding: 5px;
 }
 
 .post-user {
-    flex-basis: 30%;
-    text-align: end;
+	flex-basis: 30%;
+	text-align: end;
 }
 
 /* Buttons and text fields */
 
 button {
-    background-color: var(--red);
-    border: none;
-    display: block;
-    margin: 10px auto;
-    width: 200px;
-    border-radius: 15px;
+	background-color: var(--red);
+	border: none;
+	display: block;
+	margin: 10px auto;
+	width: 200px;
+	border-radius: 15px;
 	color: var(--white);
 	font-size: 28px;
-    font-family: "Caveat", cursive;
-    font-weight: 700;
+	font-family: "Caveat", cursive;
+	font-weight: 700;
 }
 ​
 button:hover {
-    background-color: var(--darkpink);
+	background-color: var(--darkpink);
 }
 
 input[type="text"],
 input[type="password"],
 input[type="submit"],
 textarea {
-    font-size: 18px;
-    border: none;
-    resize: vertical;
-    width: 300px;
-    margin: 10px 0;
-    padding: 5px;
+	font-size: 18px;
+	border: none;
+	resize: vertical;
+	width: 300px;
+	margin: 10px 0;
+	padding: 5px;
 }
 
 input[type="text"] {
-    padding: 8px;
-    margin: 15px;
-    font-size: 15px;
+	padding: 8px;
+	margin: 15px;
+	font-size: 15px;
 }
 
+
+
 #new-post-form {
-    margin: 20px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+	margin: 20px;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
 }
 
 .signup {
-    font-size: 18px;
+	font-size: 18px;
 }
 
 .kevin {
-    width: 50px;
+	width: 50px;
+}
+
+.titles {
+	color: var(--white);
+	font-size: 28px;
+	font-family: "Caveat", cursive;
+	font-weight: 700;
 }
 
 /* Media queries */
 
 @media (max-width: 600px) {
-    .post-headline {
-        flex-basis: 100%;
-        text-align: center;
-    }
+	.post-headline {
+		flex-basis: 100%;
+		text-align: center;
+	}
 
-    #masthead {
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: center;
-        margin: 20px;
-    }
+	#masthead {
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		justify-content: center;
+		margin: 20px;
+	}
 	
-    h1 {
-        text-align: center;
-        margin: 0;
-        padding: 10px;
-        font-size: 50px;
-    }
+	h1 {
+		text-align: center;
+		margin: 0;
+		padding: 10px;
+		font-size: 50px;
+	}
 	
-    h3 {
-        font-size: 32px;
-        font-weight: bold;
-    }
+	h3 {
+		font-size: 32px;
+		font-weight: bold;
+	}
 	
-    h4 {
-        font-size: 24px;
-        font-weight: normal;
-    }
+	h4 {
+		font-size: 24px;
+		font-weight: normal;
+	}
 	
 	p {
-        font-size: 16px;
-        line-height: 20px;
-        font-weight: normal;
-        padding: 15px;
-    }
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: normal;
+		padding: 15px;
+	}
 	
 	input[type="text"],
-    input[type="password"],
-    input[type="submit"],
-    textarea {
-        font-size: 18px;
-        width: 250px;
-    }
+	input[type="password"],
+	input[type="submit"],
+	textarea {
+		font-size: 18px;
+		width: 250px;
+	}
 }
