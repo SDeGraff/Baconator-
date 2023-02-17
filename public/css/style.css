@@ -196,13 +196,17 @@ button {
     margin: 10px auto;
     width: 200px;
     border-radius: 15px;
+	color: var(--white);
+	font-size: 28px;
+    font-family: "Caveat", cursive;
+    font-weight: 700;
 }
 ​
 button:hover {
     background-color: var(--darkpink);
 }
 
-/* input[type="text"],
+input[type="text"],
 input[type="password"],
 input[type="submit"],
 textarea {
@@ -212,7 +216,7 @@ textarea {
     width: 300px;
     margin: 10px 0;
     padding: 5px;
-} */
+}
 
 input[type="text"] {
     padding: 8px;
