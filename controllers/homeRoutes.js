@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
 	try {
-		const [posts, metadata] = await sequelize.query("Select * from Posts order by ID DESC");
+		const [posts, metadata] = await sequelize.query("Select * from Posts order by ID DESC limit 6");
 
 		res.render('newHomepage', { posts });
 
