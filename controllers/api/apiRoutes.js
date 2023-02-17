@@ -1,20 +1,16 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const Posts = require('../../models');
 
 
 router.post('/post', async (req, res) => {
 	try {
 
-	console.log(req);
-	console.log(res);
-	
-		const title = req.body.title;
-		const message = req.body.message;
-		const postData = await Post.create(
-			{ title: title },
-			{ message: message },
-			{ responseMessage: 'Post Created' }
-		)
+		const postTitle = req.body.title;
+		const postMessage = req.body.message;
+
+
+		const postData = await Posts.create({ title: postTitle, message: postMessage });
+
 
 		res.status(200).json(postData);
 
