@@ -9,6 +9,9 @@
     "dev": "nodemon server.js",
     "seed": "node seeds/seed.js"
   },
+ "engines": {
+    "node": "18.12.1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
