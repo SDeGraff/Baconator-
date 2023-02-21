@@ -20,3 +20,5 @@ const signUpFormHandler = async (event) => {
   };
 
 document.querySelector('#signup-form').addEventListener('submit', signUpFormHandler);
+
+// Path: public\js\login.js
