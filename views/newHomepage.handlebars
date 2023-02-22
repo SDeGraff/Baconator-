@@ -1,0 +1,42 @@
+<section class="post">
+    {{#each posts}}
+    <div class="post-header">
+        <div class="post-headline">
+            <h3><img class="kevin" src="/Images/Kevin.jpg" alt="User Photo" class="UserPhoto">{{this.Title}}</h3>
+        </div>
+        <div class="post-user">
+            <h4>Posted by Kevin Bacon </h4>
+        </div>
+    </div>
+    <p>{{this.Message}}</p>
+    {{/each}}
+</section>
+
+<section class="post">
+    <div class="section-header">
+        <h3>Create New Post</h3>
+    </div>
+    <div class="section-body">
+        <form id="new-post-form">
+			<table width="100%" border="0">
+				<tr>
+					<td class="titles">Title</td>
+					<td class="titles">Message</td>
+					<td class="titles">Send it!</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" name="title" id="title">
+					</td>
+					<td>
+						<textarea name="content" id="content"></textarea>
+					</td>
+					<td>
+						<button class="create-post" type="submit">Create</button>
+					</td>
+				</tr>
+
+        </form>
+    </div>
+</section>
+<script src="/js/create-post.js"></script>

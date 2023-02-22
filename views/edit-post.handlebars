@@ -1,0 +1,16 @@
+<section class="post">
+    <div class="section-header">
+        <h3>Edit Post</h3>
+    </div>
+    <div class="section-body">
+        <form action="/post" method="POST">
+            <label for="title">POST TITLE</label>
+            <input type="text" name="title" id="title">
+            <label for="content">POST CONTENT</label>
+            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            <button class="edit-post" type="submit">Update Post</button>
+            <button class="edit-post" type="submit">Delete</button>
+        </form>
+    </div>
+</section>
+<script src="/js/edit-post.js"></script>
